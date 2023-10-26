@@ -10,8 +10,8 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-COPY Gemfile* /app/
+COPY app/Gemfile* ./
 RUN gem install bundler && bundle install
-COPY . /app
+COPY app/ .
 EXPOSE 3000
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]

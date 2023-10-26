@@ -7,6 +7,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgresql://user:password@db:5432/mydb
+      - TZ=Asia/Tokyo
+    volumes:
+      - ./app:/app
   db:
     image: postgres:latest
     environment:
