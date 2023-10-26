@@ -1,6 +1,6 @@
-servieces:
+services:
   web:
-    build: ./app
+    build: .
     ports:
       - "3000:3000"
     depends_on:
@@ -16,5 +16,5 @@ servieces:
     volumes:
       - pg-data:/var/lib/postgresql/data
 
-valume:
+volumes:
   pg-data:
